@@ -10,6 +10,7 @@ def show_session(key):
 
     session["hello"] = session.get("hello") or "World"
     session["goodnight"] = session.get("goodnight") or "Moon"
+    session[key] = session.get(key) or key
 
     response = make_response(jsonify({
         'session': {
